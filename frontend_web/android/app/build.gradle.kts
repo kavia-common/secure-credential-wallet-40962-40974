@@ -8,7 +8,8 @@ plugins {
 android {
     namespace = "com.example.frontend_web"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    // Explicitly set NDK version to satisfy plugins (e.g., shared_preferences_android requires r27)
+    ndkVersion = "27.0.12077973"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
