@@ -1,0 +1,1 @@
+ /home/kavia/workspace/code-generation/secure-credential-wallet-40962-40974/frontend_web/.dart_tool/flutter_build/138b213179e5b0cc50b5f672d31b7ba7/native_assets.json: 
