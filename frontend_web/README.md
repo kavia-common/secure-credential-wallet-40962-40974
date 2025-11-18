@@ -1,16 +1,18 @@
-# frontend_web
+# Frontend (Flutter) - Env Integration
 
-A new Flutter project.
+This minimal scaffold wires the app to read BACKEND_BASE_URL from a `.env` file using `flutter_dotenv`.
 
-## Getting Started
+Setup:
+1) Copy `.env.example` to `.env`
+2) Set:
+   BACKEND_BASE_URL=https://vscode-internal-23122-beta.beta01.cloud.kavia.ai:3001
 
-This project is a starting point for a Flutter application.
+Notes:
+- `pubspec.yaml` registers `.env` under assets so it's bundled for debug/web.
+- `lib/services/api_client.dart` exposes `ApiClient.baseUrl` and helpers (getJson/postJson/etc.).
+- `lib/main.dart` loads `.env` before `runApp` and displays the configured base URL.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Alignment with containers:
+- backend_api/.env -> DB_URL=sqlite:///./app.db, CORS_ORIGINS includes https://appetize.io
+- database_postgres/.env -> SQLITE_DB=./app.db
+- frontend_web/.env -> BACKEND_BASE_URL=https://vscode-internal-23122-beta.beta01.cloud.kavia.ai:3001
